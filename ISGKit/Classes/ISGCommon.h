@@ -72,9 +72,12 @@ _Pragma("clang diagnostic pop")\
 } while (0)
 
 #ifdef __IPHONE_11_0
+
+/*
 if ([tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
     tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-}
+}*/
+
 #endif
 
 #endif /* ISGCommon_h */
