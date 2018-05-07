@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ISGKit_Example' do
+  pod 'ISGKit', :path => '../'
+
+  target 'ISGKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
