@@ -1,0 +1,16 @@
+PODS:
+  - ISGKit (1.0)
+
+DEPENDENCIES:
+  - ISGKit (from `../`)
+
+EXTERNAL SOURCES:
+  ISGKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ISGKit: 17fd43688e56d7d2cb9cfde6a337f23af81e9fef
+
+PODFILE CHECKSUM: 04e1e865d73fffd9dc16df6cfeef39a532d60a08
+
+COCOAPODS: 1.4.0
