@@ -54,6 +54,8 @@
 
 
 // ios11
+
+/*
 #define  adjustsScrollViewInsets(scrollView)\
 do {\
 _Pragma("clang diagnostic push")\
@@ -73,11 +75,10 @@ _Pragma("clang diagnostic pop")\
 
 #ifdef __IPHONE_11_0
 
-/*
 if ([tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
     tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-}*/
+}
 
 #endif
-
+*/
 #endif /* ISGCommon_h */
