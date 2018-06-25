@@ -147,4 +147,30 @@
  @return yes是   no不是
  */
 + (BOOL)isPureNumandCharacters:(NSString *)string;
+
+/**
+ 自动设置label的frame（默认的最大宽度为屏幕宽）
+
+ @param label label
+ @param x x
+ @param y y
+ @return frame
+ */
++ (CGRect )setLabelFrameWithLabel:(UILabel*)label
+                           labelX:(CGFloat)x
+                           labelY:(CGFloat)y;
+
+/**
+  自动设置label的frame
+
+ @param label label
+ @param x x
+ @param y y
+ @param maxWidth 最大宽度
+ @return frame
+ */
++ (CGRect )setLabelFrameWithLabel:(UILabel*)label
+                           labelX:(CGFloat)x
+                           labelY:(CGFloat)y
+                         maxWidth:(CGFloat)maxWidth;
 @end

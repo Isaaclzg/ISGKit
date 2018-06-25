@@ -286,4 +286,28 @@
     [objDateformat setDateFormat:@"yyyy-MM-dd HH:mm"];
     return [objDateformat stringFromDate: date];
 }
+
+#pragma mark - —————————————————————Version 1.2 Add—————————————————————
+#pragma mark - 自动设置label的frame,默认最大宽度为屏幕宽
++ (CGRect )setLabelFrameWithLabel:(UILabel*)label
+                           labelX:(CGFloat)x
+                           labelY:(CGFloat)y {
+   return [self setLabelFrameWithLabel:label labelX:x labelY:y maxWidth:ISG_SCREEN_WIDTH];
+}
+
+#pragma mark - 自动设置label的frame
++ (CGRect )setLabelFrameWithLabel:(UILabel*)label
+                           labelX:(CGFloat)x
+                           labelY:(CGFloat)y
+                         maxWidth:(CGFloat)maxWidth
+{
+    NSDictionary *attrs = @{NSFontAttributeName : label.font};
+    CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
+    
+    // 计算文字占据的高度
+    CGSize size = [label.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+    
+    
+    return CGRectMake(x, y, size.width, size.height);
+ }
 @end
