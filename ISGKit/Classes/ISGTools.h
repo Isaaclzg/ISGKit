@@ -104,33 +104,6 @@
 + (CGFloat)stringHeight:(NSString *)string
                 StrFont:(UIFont *)font;
 
-
-/**
- 判断手机号时候合法
-
- @param str 手机号
- */
-+ (BOOL)checkTel:(NSString *)str;
-
-
-/**
- 判断身份证是否合法
-
- @param identityString 身份证号
- @return 是否合法
- */
-+ (BOOL)judgeIdentityStringValid:(NSString *)identityString;
-
-
-/**
- 判断银行卡号是否合法
-
- @param cardNumber 银行卡号
- @return 时候合法
- */
-+ (BOOL)checkBankCardNumber:(NSString *)cardNumber;
-
-
 /**
  十三位的时间戳转出时间
 
@@ -139,14 +112,6 @@
  */
 + (NSString *)dataStringFromTimestamp:(NSString *)timeStamp;
 
-
-/**
- 判断字符串是否为纯数字
-
- @param string 字符串
- @return yes是   no不是
- */
-+ (BOOL)isPureNumandCharacters:(NSString *)string;
 
 /**
  自动设置label的frame（默认的最大宽度为屏幕宽）
@@ -173,4 +138,46 @@
                            labelX:(CGFloat)x
                            labelY:(CGFloat)y
                          maxWidth:(CGFloat)maxWidth;
+
+/**
+ 自动设置居右的label的frame（仅适用父视图的宽度以及最大宽度都是屏幕宽的时候）
+
+ @param label label
+ @param x 居右的距离
+ @param y y
+ @return frame
+ */
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+                                rightX:(CGFloat)x
+                                labelY:(CGFloat)y;
+
+/**
+ 自动设置居右的label的frame
+
+ @param label label
+ @param x 居右的距离
+ @param y y
+ @param parentWidth 父视图的宽度
+ @return frame
+ */
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+                                rightX:(CGFloat)x
+                                labelY:(CGFloat)y
+                           parentWidth:(CGFloat)parentWidth;
+
+/**
+ 自动设置距离父视图右侧label的frame
+
+ @param label label
+ @param x 居右的距离
+ @param y y
+ @param parentWidth 父视图的宽度
+ @param maxWidth 最大宽度
+ @return frame
+ */
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+                                rightX:(CGFloat)x
+                                labelY:(CGFloat)y
+                           parentWidth:(CGFloat)parentWidth
+                              maxWidth:(CGFloat)maxWidth;
 @end
