@@ -31,7 +31,33 @@ pod 'ISGKit'
 ```
 #import "ISGCommon.h"
 ```
+## Version 1.3 新增
 
+```
+/**
+自动设置居右的label的frame（仅适用父视图的宽度以及最大宽度都是屏幕宽的时候）
+*/
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+rightX:(CGFloat)x
+labelY:(CGFloat)y;
+
+/**
+自动设置居右的label的frame
+*/
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+rightX:(CGFloat)x
+labelY:(CGFloat)y
+parentWidth:(CGFloat)parentWidth;
+
+/**
+自动设置距离父视图右侧label的frame
+*/
++ (CGRect )setRightLabelFrameWithLabel:(UILabel*)label
+rightX:(CGFloat)x
+labelY:(CGFloat)y
+parentWidth:(CGFloat)parentWidth
+maxWidth:(CGFloat)maxWidth;
+```
 
 ## Author
 
