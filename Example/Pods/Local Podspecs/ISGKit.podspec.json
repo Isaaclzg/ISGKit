@@ -1,8 +1,8 @@
 {
   "name": "ISGKit",
-  "version": "1.3",
+  "version": "1.4",
   "summary": "ISGKit.",
-  "description": "TODO: 新增自动计算label的方法",
+  "description": "TODO: 新增NSDictionary转JSON",
   "homepage": "https://github.com/Isaaclzg/ISGKit",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Isaaclzg/ISGKit.git",
-    "tag": "1.3"
+    "tag": "1.4"
   },
   "social_media_url": "https://www.jianshu.com/u/7e1b920cdac1",
   "platforms": {

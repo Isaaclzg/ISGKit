@@ -247,4 +247,22 @@
     return CGRectMake(parentWidth - x - size.width, y, size.width, size.height);
    
 }
+
+#pragma mark - —————————————————————Version 1.4 Add—————————————————————
+#pragma mark - NSDictionary转JSON
++ (NSString*)dataToJsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
+
 @end

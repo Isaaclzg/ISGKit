@@ -180,4 +180,12 @@
                                 labelY:(CGFloat)y
                            parentWidth:(CGFloat)parentWidth
                               maxWidth:(CGFloat)maxWidth;
+
+/**
+ NSDictionary转JSON
+
+ @param object NSDictionary
+ @return JSON
+ */
++ (NSString*)dataToJsonString:(id)object;
 @end
