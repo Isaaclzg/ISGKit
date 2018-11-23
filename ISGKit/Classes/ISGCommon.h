@@ -42,7 +42,7 @@
 #define ISGPlaceholderImage [UIImage imageNamed:@"morentu"]
 
 // 判断是否是iPhone X
-#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhoneX (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812))) || (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(414, 896)))
 // 状态栏高度
 #define kStatusBarHeight (iPhoneX ? 44.f : 20.f)
 // 导航栏高度
