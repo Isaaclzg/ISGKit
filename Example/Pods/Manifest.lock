@@ -1,5 +1,5 @@
 PODS:
-  - ISGKit (1.4)
+  - ISGKit (1.5)
 
 DEPENDENCIES:
   - ISGKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ISGKit: e06314c71a91223b71fa04e61019fd37386a2696
+  ISGKit: 8d1126a9afe40e0bc2d9e6e67cf6d9b7df51e83c
 
 PODFILE CHECKSUM: 04e1e865d73fffd9dc16df6cfeef39a532d60a08
 

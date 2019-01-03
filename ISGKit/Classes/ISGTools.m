@@ -265,4 +265,9 @@
     return jsonString;
 }
 
+#pragma mark - —————————————————————Version 1.5 Add—————————————————————
+// 修改对iPhoneX的判断
+
+#pragma mark - —————————————————————Version 1.6 Add—————————————————————
+// 新增ISGFullLog，打印完成json使用
 @end
