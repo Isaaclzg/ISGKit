@@ -188,4 +188,14 @@
  @return JSON
  */
 + (NSString*)dataToJsonString:(id)object;
+
+/**
+ 字符串为空时替换对应的字符串
+
+ @param string 字符串
+ @param emptyString 要替换的字符串
+ @return 判读后的结果
+ */
++ (NSString *)replaceEmptyString:(NSString *)string
+                     EmptyString:(NSString *)emptyString;
 @end

@@ -270,4 +270,12 @@
 
 #pragma mark - —————————————————————Version 1.6 Add—————————————————————
 // 新增ISGFullLog，打印完成json使用
+#pragma mark - —————————————————————Version 1.7 Add—————————————————————
+#pragma mark - 字符串为空时替换对应的字符串
++ (NSString *)replaceEmptyString:(NSString *)string EmptyString:(NSString *)emptyString {
+    if ([[self class] isEmptyString:string]) {
+        return emptyString;
+    }
+    return string;
+}
 @end
