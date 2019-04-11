@@ -13,17 +13,6 @@
 
 @implementation ISGTools
 
-+ (UIImage*)createImageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
-
 + (BOOL)isEmptyString:(NSString *)thestring {
     
     if ( !thestring || thestring == nil || thestring == Nil) {
@@ -169,15 +158,7 @@
     return contentRect.size.height;
 }
 
-#pragma mark - 判断字符串是否为纯数字
-+ (BOOL)isPureNumandCharacters:(NSString *)string {
-    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
-    if(string.length > 0)
-    {
-        return NO;
-    }
-    return YES;
-}
+
 
 + (NSString *)dataStringFromTimestamp:(NSString *)timeStamp {
 
@@ -271,11 +252,5 @@
 #pragma mark - —————————————————————Version 1.6 Add—————————————————————
 // 新增ISGFullLog，打印完成json使用
 #pragma mark - —————————————————————Version 1.7 Add—————————————————————
-#pragma mark - 字符串为空时替换对应的字符串
-+ (NSString *)replaceEmptyString:(NSString *)string EmptyString:(NSString *)emptyString {
-    if ([[self class] isEmptyString:string]) {
-        return emptyString;
-    }
-    return string;
-}
+
 @end
