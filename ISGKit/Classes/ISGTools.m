@@ -7,50 +7,16 @@
 //
 
 #import "ISGTools.h"
-#import "ISGCommon.h"
+#import "NSString+ISGCategory.h"
 
 #define ISG_SCREEN_WIDTH [UIScreen  mainScreen].bounds.size.width
 
 @implementation ISGTools
 
-+ (BOOL)isEmptyString:(NSString *)thestring {
-    
-    if ( !thestring || thestring == nil || thestring == Nil) {
-        return YES;
-    }
-    
-    if (thestring == nil)
-    {
-        return YES;
-    }
-    if (thestring == NULL)
-    {
-        return YES;
-    }
-    if ([thestring isKindOfClass:[NSNull class]])
-    {
-        return YES;
-    }
-    if ([thestring isEqual:[NSNull null]]) {
-        return YES;
-    }
-    if ([thestring isEqualToString:@"<null>"]) {
-        return YES;
-    }
-    if ([thestring isEqualToString:@"(null)"]) {
-        return YES;
-    }
-    if ([[thestring stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0)
-    {
-        return YES;
-    }
-    return NO;
-}
-
 + (CGFloat)stringWidth:(NSString *)string
             stringSize:(CGFloat)size {
 
-    if ([ISGTools isEmptyString:string]) {
+    if ([string isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -66,7 +32,7 @@
 + (CGFloat)stringHeight:(NSString *)string
              stringSize:(CGFloat)size {
     
-    if ([ISGTools isEmptyString:string]) {
+    if ([string isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -83,7 +49,7 @@
                size:(CGFloat)size
            MAXWidth:(CGFloat)width {
     
-    if ([ISGTools isEmptyString:str]) {
+    if ([str isEmptyString]) {
         return CGRectZero;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -98,7 +64,7 @@
 
 + (CGFloat)lableWidthWithFont:(UILabel *)label {
 
-    if ([ISGTools isEmptyString:label.text]) {
+    if ([label.text isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -113,7 +79,7 @@
 
 + (CGFloat)lableHeightWithFont:(UILabel *)label {
     
-    if ([ISGTools isEmptyString:label.text]) {
+    if ([label.text isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -129,7 +95,7 @@
 + (CGFloat)stringWidth:(NSString *)string
             StrFont:(UIFont *)font {
     
-    if ([ISGTools isEmptyString:string]) {
+    if ([string isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -145,7 +111,7 @@
 + (CGFloat)stringHeight:(NSString *)string
              StrFont:(UIFont *)font {
     
-    if ([ISGTools isEmptyString:string]) {
+    if ([string isEmptyString]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -200,7 +166,7 @@
                                 rightX:(CGFloat)x
                                 labelY:(CGFloat)y
 {
-    return [self setRightLabelFrameWithLabel:label rightX:x labelY:y parentWidth:kScreenWidth maxWidth:kScreenWidth];
+    return [self setRightLabelFrameWithLabel:label rightX:x labelY:y parentWidth:ISG_SCREEN_WIDTH maxWidth:ISG_SCREEN_WIDTH];
 }
 
 #pragma mark - 自动设置距离父视图右侧label的frame,默认label的最大宽度为屏幕宽
@@ -209,7 +175,7 @@
                                 labelY:(CGFloat)y
                            parentWidth:(CGFloat)parentWidth
 {
-    return [self setRightLabelFrameWithLabel:label rightX:x labelY:y parentWidth:parentWidth maxWidth:kScreenWidth];
+    return [self setRightLabelFrameWithLabel:label rightX:x labelY:y parentWidth:parentWidth maxWidth:ISG_SCREEN_WIDTH];
 }
 
 #pragma mark - 自动设置距离父视图右侧label的frame

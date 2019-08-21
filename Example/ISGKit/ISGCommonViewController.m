@@ -7,7 +7,7 @@
 //
 
 #import "ISGCommonViewController.h"
-#import "ISGCommon.h"
+
 
 @interface ISGCommonViewController ()
 
@@ -19,9 +19,6 @@
 {
     [super viewDidLoad];
 	
-    BOOL isIPhoneX = iPhoneX;
-    
-    NSLog(@"是否是iphoneX以上：%@\n屏幕的宽高：%f,%f",(isIPhoneX ? @"是" : @"否"),kScreenWidth,kScreenHeight);
 }
 
 - (void)didReceiveMemoryWarning

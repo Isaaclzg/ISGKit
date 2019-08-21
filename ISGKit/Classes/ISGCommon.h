@@ -9,19 +9,6 @@
 #ifndef ISGCommon_h
 #define ISGCommon_h
 
-#ifdef DEBUG
-
-#define NSLog(fmt, ...) NSLog((@ "[行号:%d] \n" "[函数名:%s]\n"  fmt),  __LINE__, __FUNCTION__, ##__VA_ARGS__);
-
-#define ISGFullLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-
-#else
-
-#define NSLog(...);
-#define ISGFullLog(...);
-
-#endif
-
 /*! @brief iOS版本 */
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
