@@ -28,4 +28,11 @@ typedef void(^TouchCallBackBlock)(void);
  */
 - (void)addTarget:(id)target action:(SEL)action;
 
+/*
+ 周边加阴影，并且同时圆角
+ */
+- (void)addShadowWithOpacity:(float)shadowOpacity
+                shadowRadius:(CGFloat)shadowRadius
+             andCornerRadius:(CGFloat)cornerRadius;
+
 @end

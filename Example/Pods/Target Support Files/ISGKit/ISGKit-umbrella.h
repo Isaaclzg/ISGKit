@@ -11,7 +11,15 @@
 #endif
 
 #import "ISGCommon.h"
+#import "ISGKit.h"
 #import "ISGTools.h"
+#import "ISGUIViewExt.h"
+#import "NSBundle+ISGCategory.h"
+#import "NSObjectSafe.h"
+#import "NSString+ISGCategory.h"
+#import "UIColor+ISGCategory.h"
+#import "UIImage+ISGCategory.h"
+#import "UIView+ISGCategory.h"
 
 FOUNDATION_EXPORT double ISGKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char ISGKitVersionString[];
