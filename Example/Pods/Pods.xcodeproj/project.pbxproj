@@ -22,7 +22,6 @@
 		7E2B30A28E62102F352D1ABDE28302C1 /* UIImage+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D89386148E21A0E8FF04580DE79F35 /* UIImage+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B0098F6FC73C4B878B48FD9C69C961C /* NSString+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 86689A0DC3BCB8FB566BE05F5A83B6D2 /* NSString+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D152D6BC08F9DB5C463B2623967421A /* UIColor+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 80FD8CFB648826F3BA1D0D7282C5C656 /* UIColor+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A25E67E78545CA597AC6970769CAB2E2 /* NSObjectSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = 0459A6F118CF9206E9E20447DAC284D6 /* NSObjectSafe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD02F1FACF0E2608F612690142FD8D15 /* UIColor+ISGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9849AB20CFDA5FD7E8209703832707 /* UIColor+ISGCategory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFB1D7FC8C72A8B8F69DC0FDD3FB6067 /* NSString+ISGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A15E15DD90B7D73C222F1B6002EFBDAA /* NSString+ISGCategory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B748EC04180DAD9B060AFD64D198F141 /* ISGKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B71E9587B175C44F2269AD106FACC56 /* ISGKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +30,6 @@
 		C68C953370AC6394B7849ADCEABA5194 /* NSBundle+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 026A4C07B5E5F77F6A9510B7A714708C /* NSBundle+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D512DE1146E05DAD84C12614F3D0FF69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		DB7B14A66F8BB975B4AD47912EFBCF5B /* ISGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB305AD9795DA5490B970492C74AEE2 /* ISGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F018BC44D40CE9FDAFE201B940B424B8 /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = E285E0149FD8462C4EE7154268B3C196 /* NSObjectSafe.m */; };
 		F308578B137284F16E64FAF528CAEC42 /* ISGTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4142D650EE61D741B644422D22AB84F2 /* ISGTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F48689D6951ADEE7C94EAE1EDF5F8AAB /* ISGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 8732B8A3480D823A5B71AB8522A5E19C /* ISGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F638FB74BEB951AD1F6F9DEE93490C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
@@ -56,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		026A4C07B5E5F77F6A9510B7A714708C /* NSBundle+ISGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+ISGCategory.h"; path = "ISGKit/Classes/NSBundle+ISGCategory.h"; sourceTree = "<group>"; };
-		0459A6F118CF9206E9E20447DAC284D6 /* NSObjectSafe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSObjectSafe.h; path = ISGKit/Classes/NSObjectSafe.h; sourceTree = "<group>"; };
 		06D89386148E21A0E8FF04580DE79F35 /* UIImage+ISGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ISGCategory.h"; path = "ISGKit/Classes/UIImage+ISGCategory.h"; sourceTree = "<group>"; };
 		17B6EC7B560B9274DE42F3B86E7D1CB8 /* Pods-ISGKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ISGKit_Example.modulemap"; sourceTree = "<group>"; };
 		191C8E56D1332CDE72F200ABF4533DAE /* Pods-ISGKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISGKit_Example-Info.plist"; sourceTree = "<group>"; };
@@ -65,16 +62,16 @@
 		2B3CC5E4F79FFDF375202D1450CA6159 /* Pods-ISGKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ISGKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		315437ACFFF03B989E51532E85BD936C /* Pods-ISGKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISGKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		32937008F590162D4CB761B3417B4164 /* ISGKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ISGKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		32937008F590162D4CB761B3417B4164 /* ISGKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ISGKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		32B22AF5A39BB6E27D6F96B6FF2D7BB5 /* Pods-ISGKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISGKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		351F50E9407CBA1156E2BC2338B32BA3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		351F50E9407CBA1156E2BC2338B32BA3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		413FE1AABEFD9FC9998E1ED0F6A8D7ED /* NSBundle+ISGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+ISGCategory.m"; path = "ISGKit/Classes/NSBundle+ISGCategory.m"; sourceTree = "<group>"; };
 		4142D650EE61D741B644422D22AB84F2 /* ISGTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISGTools.m; path = ISGKit/Classes/ISGTools.m; sourceTree = "<group>"; };
 		435987B52D0869BF4468AE320DC002FD /* UIView+ISGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ISGCategory.m"; path = "ISGKit/Classes/UIView+ISGCategory.m"; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4F46E0B0D44FDFB8D7B3FE411B314D3F /* Pods-ISGKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISGKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5C961137C1510EEA504B268BE13EF1CE /* ISGKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ISGKit-prefix.pch"; sourceTree = "<group>"; };
-		64D91F6055C6AD9F65FCE46C2D6B1FD2 /* Pods_ISGKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ISGKit_Tests.framework; path = "Pods-ISGKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64D91F6055C6AD9F65FCE46C2D6B1FD2 /* Pods_ISGKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISGKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B71E9587B175C44F2269AD106FACC56 /* ISGKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ISGKit-umbrella.h"; sourceTree = "<group>"; };
 		7BE92660D328B5B0120A681B352F97CA /* UIView+ISGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ISGCategory.h"; path = "ISGKit/Classes/UIView+ISGCategory.h"; sourceTree = "<group>"; };
 		80FD8CFB648826F3BA1D0D7282C5C656 /* UIColor+ISGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ISGCategory.h"; path = "ISGKit/Classes/UIColor+ISGCategory.h"; sourceTree = "<group>"; };
@@ -82,9 +79,9 @@
 		86689A0DC3BCB8FB566BE05F5A83B6D2 /* NSString+ISGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ISGCategory.h"; path = "ISGKit/Classes/NSString+ISGCategory.h"; sourceTree = "<group>"; };
 		871F9E97FB2107EDCC91660C78F2C149 /* ISGKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ISGKit.xcconfig; sourceTree = "<group>"; };
 		8732B8A3480D823A5B71AB8522A5E19C /* ISGTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISGTools.h; path = ISGKit/Classes/ISGTools.h; sourceTree = "<group>"; };
-		953AA94CE9D496644A12D76D8DDF78D1 /* Pods_ISGKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ISGKit_Example.framework; path = "Pods-ISGKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		953AA94CE9D496644A12D76D8DDF78D1 /* Pods_ISGKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISGKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D40D720B7D0BEB6516E3D3385E90095 /* Pods-ISGKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ISGKit_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A15E15DD90B7D73C222F1B6002EFBDAA /* NSString+ISGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+ISGCategory.m"; path = "ISGKit/Classes/NSString+ISGCategory.m"; sourceTree = "<group>"; };
 		A62A7C91713179C8DA690E1B1E047BC8 /* Pods-ISGKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISGKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AA893EBA4F8656743006DD9942F4E40B /* ISGKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ISGKit-Info.plist"; sourceTree = "<group>"; };
@@ -92,14 +89,13 @@
 		B5F8C645D8DF96A8F4C3D781E3629D1B /* Pods-ISGKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ISGKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		BBD3B5A79022E33B7513608F05152241 /* Pods-ISGKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISGKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BEE1FA9AAA97FD12E0CC6BE4359725FD /* Pods-ISGKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ISGKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C55485D2785EFB256D97346C90A0F1B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C55485D2785EFB256D97346C90A0F1B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CA3CADBE1F9AF5CF90DDE3CA8604D0CB /* ISGUIViewExt.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ISGUIViewExt.m; path = ISGKit/Classes/ISGUIViewExt.m; sourceTree = "<group>"; };
 		CC9849AB20CFDA5FD7E8209703832707 /* UIColor+ISGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ISGCategory.m"; path = "ISGKit/Classes/UIColor+ISGCategory.m"; sourceTree = "<group>"; };
 		D03FABD94A947CBE8A92BD6BFB9F8E63 /* ISGKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ISGKit-dummy.m"; sourceTree = "<group>"; };
 		D87F7E0FA8E1A15B560A78994C347CFD /* Pods-ISGKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ISGKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		DAABABE905F1EC5647A8470D58FBE561 /* Pods-ISGKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ISGKit_Tests.modulemap"; sourceTree = "<group>"; };
-		E285E0149FD8462C4EE7154268B3C196 /* NSObjectSafe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSObjectSafe.m; path = ISGKit/Classes/NSObjectSafe.m; sourceTree = "<group>"; };
-		EA4041C6B95552CA0AD294677171FA2D /* ISGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ISGKit.framework; path = ISGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4041C6B95552CA0AD294677171FA2D /* ISGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EB7D72ACDD299CE5A93B900A445463 /* ISGKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ISGKit.modulemap; sourceTree = "<group>"; };
 		F61E937BC013290D47E52CCC63BAB5DF /* Pods-ISGKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISGKit_Tests-Info.plist"; sourceTree = "<group>"; };
 		F80C3AAE3F284BD218AAC0A9E6B320A0 /* ISGUIViewExt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISGUIViewExt.h; path = ISGKit/Classes/ISGUIViewExt.h; sourceTree = "<group>"; };
@@ -174,8 +170,6 @@
 				CA3CADBE1F9AF5CF90DDE3CA8604D0CB /* ISGUIViewExt.m */,
 				026A4C07B5E5F77F6A9510B7A714708C /* NSBundle+ISGCategory.h */,
 				413FE1AABEFD9FC9998E1ED0F6A8D7ED /* NSBundle+ISGCategory.m */,
-				0459A6F118CF9206E9E20447DAC284D6 /* NSObjectSafe.h */,
-				E285E0149FD8462C4EE7154268B3C196 /* NSObjectSafe.m */,
 				86689A0DC3BCB8FB566BE05F5A83B6D2 /* NSString+ISGCategory.h */,
 				A15E15DD90B7D73C222F1B6002EFBDAA /* NSString+ISGCategory.m */,
 				80FD8CFB648826F3BA1D0D7282C5C656 /* UIColor+ISGCategory.h */,
@@ -305,7 +299,6 @@
 				F48689D6951ADEE7C94EAE1EDF5F8AAB /* ISGTools.h in Headers */,
 				1B3D39070B8E99D1E4B1C4DE78B75E7B /* ISGUIViewExt.h in Headers */,
 				C68C953370AC6394B7849ADCEABA5194 /* NSBundle+ISGCategory.h in Headers */,
-				A25E67E78545CA597AC6970769CAB2E2 /* NSObjectSafe.h in Headers */,
 				8B0098F6FC73C4B878B48FD9C69C961C /* NSString+ISGCategory.h in Headers */,
 				8D152D6BC08F9DB5C463B2623967421A /* UIColor+ISGCategory.h in Headers */,
 				7E2B30A28E62102F352D1ABDE28302C1 /* UIImage+ISGCategory.h in Headers */,
@@ -433,7 +426,6 @@
 				F308578B137284F16E64FAF528CAEC42 /* ISGTools.m in Sources */,
 				15A935CB27857D5CCC5FD8EE150621D9 /* ISGUIViewExt.m in Sources */,
 				359D1D65A735135FC0F73C5343994C6B /* NSBundle+ISGCategory.m in Sources */,
-				F018BC44D40CE9FDAFE201B940B424B8 /* NSObjectSafe.m in Sources */,
 				AFB1D7FC8C72A8B8F69DC0FDD3FB6067 /* NSString+ISGCategory.m in Sources */,
 				AD02F1FACF0E2608F612690142FD8D15 /* UIColor+ISGCategory.m in Sources */,
 				3361B468931711D26EFD491D41AEFA82 /* UIImage+ISGCategory.m in Sources */,
@@ -692,8 +684,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
