@@ -11,6 +11,30 @@ typedef void(^TouchCallBackBlock)(void);
 
 @interface UIView (ISGCategory)
 
+/*! @brief origin */
+@property CGPoint origin_zgl;
+
+/*! @brief size */
+@property CGSize size_zgl;
+
+/*! @brief 宽度 */
+@property CGFloat width_zgl;
+
+/*! @brief 高度 */
+@property CGFloat height_zgl;
+
+/*! @brief 上 */
+@property CGFloat top_zgl;
+
+/*! @brief 左 */
+@property CGFloat left_zgl;
+
+/*! @brief 下 */
+@property CGFloat bottom_zgl;
+
+/*! @brief 右 */
+@property CGFloat right_zgl;
+
 @property (nonatomic, copy) TouchCallBackBlock touchCallBackBlock;
 
 /**

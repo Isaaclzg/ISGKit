@@ -14,6 +14,90 @@ NSString const *BlockKey = @"BlockKey";
 
 @implementation UIView (ISGCategory)
 
+#pragma mark - —————————————————————Frame—————————————————————
+#pragma mark - Getter
+- (CGPoint)origin_zgl {
+    return self.frame.origin;
+}
+
+- (CGSize)size_zgl {
+    return self.frame.size;
+}
+
+- (CGFloat)width_zgl {
+    return self.frame.size.width;
+}
+
+- (CGFloat)height_zgl {
+    return self.frame.size.height;
+}
+
+- (CGFloat)top_zgl {
+    return self.frame.origin.y;
+}
+
+- (CGFloat)left_zgl {
+    return self.frame.origin.x;
+}
+
+- (CGFloat)bottom_zgl {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (CGFloat)right_zgl {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+#pragma mark - Setter
+- (void)setOrigin_zgl:(CGPoint)origin_zgl {
+    CGRect newframe = self.frame;
+    newframe.origin = origin_zgl;
+    self.frame = newframe;
+}
+
+- (void)setSize_zgl:(CGSize)size_zgl {
+    CGRect newframe = self.frame;
+    newframe.size = size_zgl;
+    self.frame = newframe;
+}
+
+- (void)setWidth_zgl:(CGFloat)width_zgl {
+    CGRect newframe = self.frame;
+    newframe.size.width = width_zgl;
+    self.frame = newframe;
+}
+
+- (void)setHeight_zgl:(CGFloat)height_zgl {
+    CGRect newframe = self.frame;
+    newframe.size.height = height_zgl;
+    self.frame = newframe;
+}
+
+- (void)setTop_zgl:(CGFloat)top_zgl {
+    CGRect newframe = self.frame;
+    newframe.origin.y = top_zgl;
+    self.frame = newframe;
+}
+
+- (void)setLeft_zgl:(CGFloat)left_zgl {
+    CGRect newframe = self.frame;
+    newframe.origin.x = left_zgl;
+    self.frame = newframe;
+}
+
+- (void)setBottom_zgl:(CGFloat)bottom_zgl {
+    CGRect newframe = self.frame;
+    newframe.origin.y = bottom_zgl - self.frame.size.height;
+    self.frame = newframe;
+}
+
+- (void)setRight_zgl:(CGFloat)right_zgl {
+    CGFloat delta = right_zgl - (self.frame.origin.x + self.frame.size.width);
+    CGRect newframe = self.frame;
+    newframe.origin.x += delta;
+    self.frame = newframe;
+}
+#pragma mark - —————————————————————添加点击事件—————————————————————
 - (void)addActionWithblock:(TouchCallBackBlock)block
 {
     self.touchCallBackBlock = block;
@@ -82,10 +166,7 @@ NSString const *BlockKey = @"BlockKey";
     return taps;
 }
 
-
-/*
- 周边加阴影，并且同时圆角
- */
+#pragma mark - ————————————————————— 周边加阴影，并且同时圆角—————————————————————
 - (void)addShadowWithOpacity:(float)shadowOpacity
            shadowRadius:(CGFloat)shadowRadius
         andCornerRadius:(CGFloat)cornerRadius

@@ -1,4 +1,3 @@
-#import "ISGUIViewExt.h"
 #import "ISGTools.h"
 #import "UIColor+ISGCategory.h"
 #import "NSString+ISGCategory.h"

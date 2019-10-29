@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISGKit'
-  s.version          = '2.0.2'
+  s.version          = '2.1.0'
   s.summary          = 'ISGKit.'
 
 # This description is used to generate tags and improve search results.
@@ -18,8 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: 删除NSObjectSafe https://github.com/jasenhuang/NSObjectSafe
-      UIView圆角阴影同时设定
+TODO: 整和ISGUIViewExt到UIViewGategory中
                        DESC
 
   s.homepage         = 'https://github.com/Isaaclzg/ISGKit'
