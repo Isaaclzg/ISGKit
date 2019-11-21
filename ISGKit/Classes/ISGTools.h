@@ -171,4 +171,7 @@
  */
 + (NSString*)dataToJsonString:(id)object;
 
+/// 判断字符串是否为空
+/// @param string 为空时返回YES
++ (BOOL)isEmptyString:(NSString *)string;
 @end

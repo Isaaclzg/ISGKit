@@ -6,6 +6,7 @@
 //
 
 #import "NSString+ISGCategory.h"
+#import "ISGTools.h"
 
 #define HANZI_START 19968
 #define HANZI_COUNT 20902
@@ -361,46 +362,12 @@ static char firstLetterArray[HANZI_COUNT] =
     return YES;
 }
 
-#pragma mark - 判断字符串是否为空
-- (BOOL)isEmptyString {
-    
-    if ( !self || self == nil || self == Nil) {
-        return YES;
-    }
-    
-    if (self == nil)
-    {
-        return YES;
-    }
-    if (self == NULL)
-    {
-        return YES;
-    }
-    if ([self isKindOfClass:[NSNull class]])
-    {
-        return YES;
-    }
-    if ([self isEqual:[NSNull null]]) {
-        return YES;
-    }
-    if ([self isEqualToString:@"<null>"]) {
-        return YES;
-    }
-    if ([self isEqualToString:@"(null)"]) {
-        return YES;
-    }
-    if ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0)
-    {
-        return YES;
-    }
-    return NO;
-}
 
 #pragma mark - 字符串为空时替换对应的字符串
-- (NSString *)replaceEmptyString:(NSString *)replaceString {
-    if ([self isEmptyString]) {
+- (NSString *)replaceEmptyString:(NSString *)string replaceString:(NSString *)replaceString {
+    if ([ISGTools isEmptyString:string]) {
         return replaceString;
     }
-    return self;
+    return string;
 }
 @end

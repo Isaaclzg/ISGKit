@@ -24,7 +24,6 @@
 		AFB1D7FC8C72A8B8F69DC0FDD3FB6067 /* NSString+ISGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A15E15DD90B7D73C222F1B6002EFBDAA /* NSString+ISGCategory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B748EC04180DAD9B060AFD64D198F141 /* ISGKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B71E9587B175C44F2269AD106FACC56 /* ISGKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C15E900F57DAC3C8F86CBB4C6CF28B59 /* UIView+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE92660D328B5B0120A681B352F97CA /* UIView+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C683458C2241AF4805F6E0961A4D8AB8 /* ISGCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AC910256BD549498C226B393F766ADB /* ISGCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C68C953370AC6394B7849ADCEABA5194 /* NSBundle+ISGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 026A4C07B5E5F77F6A9510B7A714708C /* NSBundle+ISGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D512DE1146E05DAD84C12614F3D0FF69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		DB7B14A66F8BB975B4AD47912EFBCF5B /* ISGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB305AD9795DA5490B970492C74AEE2 /* ISGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,7 +55,6 @@
 		17B6EC7B560B9274DE42F3B86E7D1CB8 /* Pods-ISGKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ISGKit_Example.modulemap"; sourceTree = "<group>"; };
 		191C8E56D1332CDE72F200ABF4533DAE /* Pods-ISGKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ISGKit_Example-Info.plist"; sourceTree = "<group>"; };
 		213495FBE2C2EBFFCDF7C46C89AC9927 /* Pods-ISGKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISGKit_Example-dummy.m"; sourceTree = "<group>"; };
-		2AC910256BD549498C226B393F766ADB /* ISGCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISGCommon.h; path = ISGKit/Classes/ISGCommon.h; sourceTree = "<group>"; };
 		2B3CC5E4F79FFDF375202D1450CA6159 /* Pods-ISGKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ISGKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		315437ACFFF03B989E51532E85BD936C /* Pods-ISGKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ISGKit_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		6CF5C5374C658FFCB7EB2CFA4D3BE21F /* ISGKit */ = {
 			isa = PBXGroup;
 			children = (
-				2AC910256BD549498C226B393F766ADB /* ISGCommon.h */,
 				FAB305AD9795DA5490B970492C74AEE2 /* ISGKit.h */,
 				8732B8A3480D823A5B71AB8522A5E19C /* ISGTools.h */,
 				4142D650EE61D741B644422D22AB84F2 /* ISGTools.m */,
@@ -287,7 +284,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C683458C2241AF4805F6E0961A4D8AB8 /* ISGCommon.h in Headers */,
 				B748EC04180DAD9B060AFD64D198F141 /* ISGKit-umbrella.h in Headers */,
 				DB7B14A66F8BB975B4AD47912EFBCF5B /* ISGKit.h in Headers */,
 				F48689D6951ADEE7C94EAE1EDF5F8AAB /* ISGTools.h in Headers */,
@@ -373,6 +369,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 5FED1FCFF2CC1134FC820ACD8E9BB6D9 /* Products */;

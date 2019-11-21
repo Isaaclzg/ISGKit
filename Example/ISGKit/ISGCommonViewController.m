@@ -7,7 +7,7 @@
 //
 
 #import "ISGCommonViewController.h"
-
+#import <ISGTools.h>
 
 @interface ISGCommonViewController ()
 
@@ -19,6 +19,15 @@
 {
     [super viewDidLoad];
 	
+    NSString *string = @"";
+    BOOL isEmpty = [ISGTools isEmptyString:string];
+
+    if (isEmpty) {
+        NSLog(@"空的");
+    }else {
+        NSLog(@"不是空的");
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

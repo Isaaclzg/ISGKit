@@ -52,19 +52,8 @@
  */
 - (BOOL)isPureNumandCharacters;
 
-/**
- 判断字符串是都为空
- 
- @return 为空返回YES
- */
-- (BOOL)isEmptyString;
-
-/**
- 当字符串为空时用replaceString代替
-
- @param replaceString 要代替的字符串
- @return 当字符串为空时用replaceString代替，不为空直接返回
- */
-- (NSString *)replaceEmptyString:(NSString *)replaceString;
-
+/// 当字符串为空时用replaceString代替
+/// @param string 字符串
+/// @param replaceString 要代替的字符串
+- (NSString *)replaceEmptyString:(NSString *)string replaceString:(NSString *)replaceString;
 @end

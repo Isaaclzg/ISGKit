@@ -7,7 +7,7 @@
 //
 
 #import "ISGTools.h"
-#import "NSString+ISGCategory.h"
+
 
 #define ISG_SCREEN_WIDTH [UIScreen  mainScreen].bounds.size.width
 
@@ -16,7 +16,7 @@
 + (CGFloat)stringWidth:(NSString *)string
             stringSize:(CGFloat)size {
 
-    if ([string isEmptyString]) {
+    if ([[self class] isEmptyString:string]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -32,7 +32,7 @@
 + (CGFloat)stringHeight:(NSString *)string
              stringSize:(CGFloat)size {
     
-    if ([string isEmptyString]) {
+    if ([[self class] isEmptyString:string]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -49,7 +49,7 @@
                size:(CGFloat)size
            MAXWidth:(CGFloat)width {
     
-    if ([str isEmptyString]) {
+    if ([[self class] isEmptyString:str]) {
         return CGRectZero;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -64,7 +64,7 @@
 
 + (CGFloat)lableWidthWithFont:(UILabel *)label {
 
-    if ([label.text isEmptyString]) {
+    if ([[self class] isEmptyString:label.text]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -79,7 +79,7 @@
 
 + (CGFloat)lableHeightWithFont:(UILabel *)label {
     
-    if ([label.text isEmptyString]) {
+    if ([[self class] isEmptyString:label.text]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -95,7 +95,7 @@
 + (CGFloat)stringWidth:(NSString *)string
             StrFont:(UIFont *)font {
     
-    if ([string isEmptyString]) {
+    if ([[self class] isEmptyString:string]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -111,7 +111,7 @@
 + (CGFloat)stringHeight:(NSString *)string
              StrFont:(UIFont *)font {
     
-    if ([string isEmptyString]) {
+    if ([[self class] isEmptyString:string]) {
         return 0;
     }
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -212,11 +212,39 @@
     return jsonString;
 }
 
-#pragma mark - —————————————————————Version 1.5 Add—————————————————————
-// 修改对iPhoneX的判断
-
-#pragma mark - —————————————————————Version 1.6 Add—————————————————————
-// 新增ISGFullLog，打印完成json使用
-#pragma mark - —————————————————————Version 1.7 Add—————————————————————
-
+#pragma mark - —————————————————————Version 2.1.1 Add—————————————————————
+#pragma mark - 判断字符串是否为空
++ (BOOL)isEmptyString:(NSString *)string {
+    
+    if (!string || string == nil || string == Nil) {
+        return YES;
+    }
+    
+    if (string == nil)
+    {
+        return YES;
+    }
+    if (string == NULL)
+    {
+        return YES;
+    }
+    if ([string isKindOfClass:[NSNull class]])
+    {
+        return YES;
+    }
+    if ([string isEqual:[NSNull null]]) {
+        return YES;
+    }
+    if ([string isEqualToString:@"<null>"]) {
+        return YES;
+    }
+    if ([string isEqualToString:@"(null)"]) {
+        return YES;
+    }
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0)
+    {
+        return YES;
+    }
+    return NO;
+}
 @end

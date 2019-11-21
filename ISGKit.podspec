@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISGKit'
-  s.version          = '2.1.0'
+  s.version          = '2.1.1'
   s.summary          = 'ISGKit.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: 整和ISGUIViewExt到UIViewGategory中
+TODO: isEmptyString单独提取出来
                        DESC
 
   s.homepage         = 'https://github.com/Isaaclzg/ISGKit'
