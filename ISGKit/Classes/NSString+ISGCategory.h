@@ -52,8 +52,4 @@
  */
 - (BOOL)isPureNumandCharacters;
 
-/// 当字符串为空时用replaceString代替
-/// @param string 字符串
-/// @param replaceString 要代替的字符串
-- (NSString *)replaceEmptyString:(NSString *)string replaceString:(NSString *)replaceString;
 @end

@@ -362,12 +362,4 @@ static char firstLetterArray[HANZI_COUNT] =
     return YES;
 }
 
-
-#pragma mark - 字符串为空时替换对应的字符串
-- (NSString *)replaceEmptyString:(NSString *)string replaceString:(NSString *)replaceString {
-    if ([ISGTools isEmptyString:string]) {
-        return replaceString;
-    }
-    return string;
-}
 @end
