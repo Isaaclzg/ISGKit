@@ -19,12 +19,4 @@
  */
 - (UIImage *)sg_TimelineCompress;
 
-/**
- *  通过UIColor创建UIImage
- *
- *  @param color 颜色
- *
- *  @return UIImage
- */
-- (UIImage*)createImageWithColor:(UIColor *)color;
 @end

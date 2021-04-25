@@ -27,7 +27,9 @@
     }else {
         NSLog(@"不是空的");
     }
-    
+    NSString *string2 = @"ABC的风格";
+    CGFloat height = [ISGTools textHeight:string2 font:[UIFont systemFontOfSize:13]];
+    NSLog(@"height:%f",height);
 }
 
 - (void)didReceiveMemoryWarning
