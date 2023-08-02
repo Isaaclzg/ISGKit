@@ -14,7 +14,9 @@
 #import "ISGTools.h"
 #import "NSBundle+ISGCategory.h"
 #import "NSString+ISGCategory.h"
+#import "UIButton+ISGCategory.h"
 #import "UIColor+ISGCategory.h"
+#import "UIControl+ISGCategory.h"
 #import "UIImage+ISGCategory.h"
 #import "UIView+ISGCategory.h"
 

@@ -4,3 +4,5 @@
 #import "UIImage+ISGCategory.h"
 #import "UIView+ISGCategory.h"
 #import "NSBundle+ISGCategory.h"
+#import "UIButton+ISGCategory.h"
+#import "UIControl+ISGCategory.h"

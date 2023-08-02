@@ -1,8 +1,8 @@
 {
   "name": "ISGKit",
-  "version": "2.1.2",
+  "version": "3.1",
   "summary": "ISGKit.",
-  "description": "TODO: 删除替换字符串",
+  "description": "TODO: 开发自用",
   "homepage": "https://github.com/Isaaclzg/ISGKit",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Isaaclzg/ISGKit.git",
-    "tag": "2.1.2"
+    "tag": "3.1"
   },
   "social_media_url": "https://www.jianshu.com/u/7e1b920cdac1",
   "platforms": {

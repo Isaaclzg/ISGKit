@@ -16,89 +16,89 @@ NSString const *BlockKey = @"BlockKey";
 
 #pragma mark - —————————————————————Frame—————————————————————
 #pragma mark - Getter
-- (CGPoint)origin_zgl {
+- (CGPoint)origin_zg {
     return self.frame.origin;
 }
 
-- (CGSize)size_zgl {
+- (CGSize)size_zg {
     return self.frame.size;
 }
 
-- (CGFloat)width_zgl {
+- (CGFloat)width_zg {
     return self.frame.size.width;
 }
 
-- (CGFloat)height_zgl {
+- (CGFloat)height_zg {
     return self.frame.size.height;
 }
 
-- (CGFloat)top_zgl {
+- (CGFloat)top_zg {
     return self.frame.origin.y;
 }
 
-- (CGFloat)left_zgl {
+- (CGFloat)left_zg {
     return self.frame.origin.x;
 }
 
-- (CGFloat)bottom_zgl {
+- (CGFloat)bottom_zg {
     return self.frame.origin.y + self.frame.size.height;
 }
 
-- (CGFloat)right_zgl {
+- (CGFloat)right_zg {
     return self.frame.origin.x + self.frame.size.width;
 }
 
 #pragma mark - Setter
-- (void)setOrigin_zgl:(CGPoint)origin_zgl {
+- (void)setOrigin_zg:(CGPoint)origin_zg {
     CGRect newframe = self.frame;
-    newframe.origin = origin_zgl;
+    newframe.origin = origin_zg;
     self.frame = newframe;
 }
 
-- (void)setSize_zgl:(CGSize)size_zgl {
+- (void)setSize_zg:(CGSize)size_zg {
     CGRect newframe = self.frame;
-    newframe.size = size_zgl;
+    newframe.size = size_zg;
     self.frame = newframe;
 }
 
-- (void)setWidth_zgl:(CGFloat)width_zgl {
+- (void)setWidth_zg:(CGFloat)width_zg {
     CGRect newframe = self.frame;
-    newframe.size.width = width_zgl;
+    newframe.size.width = width_zg;
     self.frame = newframe;
 }
 
-- (void)setHeight_zgl:(CGFloat)height_zgl {
+- (void)setHeight_zg:(CGFloat)height_zg {
     CGRect newframe = self.frame;
-    newframe.size.height = height_zgl;
+    newframe.size.height = height_zg;
     self.frame = newframe;
 }
 
-- (void)setTop_zgl:(CGFloat)top_zgl {
+- (void)setTop_zg:(CGFloat)top_zg {
     CGRect newframe = self.frame;
-    newframe.origin.y = top_zgl;
+    newframe.origin.y = top_zg;
     self.frame = newframe;
 }
 
-- (void)setLeft_zgl:(CGFloat)left_zgl {
+- (void)setLeft_zg:(CGFloat)left_zg {
     CGRect newframe = self.frame;
-    newframe.origin.x = left_zgl;
+    newframe.origin.x = left_zg;
     self.frame = newframe;
 }
 
-- (void)setBottom_zgl:(CGFloat)bottom_zgl {
+- (void)setBottom_zg:(CGFloat)bottom_zg {
     CGRect newframe = self.frame;
-    newframe.origin.y = bottom_zgl - self.frame.size.height;
+    newframe.origin.y = bottom_zg - self.frame.size.height;
     self.frame = newframe;
 }
 
-- (void)setRight_zgl:(CGFloat)right_zgl {
-    CGFloat delta = right_zgl - (self.frame.origin.x + self.frame.size.width);
+- (void)setRight_zg:(CGFloat)right_zg {
+    CGFloat delta = right_zg - (self.frame.origin.x + self.frame.size.width);
     CGRect newframe = self.frame;
     newframe.origin.x += delta;
     self.frame = newframe;
 }
 #pragma mark - —————————————————————添加点击事件—————————————————————
-- (void)addActionWithblock:(TouchCallBackBlock)block
+- (void)addActionWithblock:(ZGTouchCallBackBlock)block
 {
     self.touchCallBackBlock = block;
     
@@ -127,12 +127,12 @@ NSString const *BlockKey = @"BlockKey";
     }
 }
 
-- (void)setTouchCallBackBlock:(TouchCallBackBlock)touchCallBackBlock
+- (void)setTouchCallBackBlock:(ZGTouchCallBackBlock)touchCallBackBlock
 {
     objc_setAssociatedObject(self, &BlockKey, touchCallBackBlock, OBJC_ASSOCIATION_COPY);
 }
 
-- (TouchCallBackBlock)touchCallBackBlock
+- (ZGTouchCallBackBlock)touchCallBackBlock
 {
     return objc_getAssociatedObject(self, &BlockKey);
 }
@@ -214,5 +214,79 @@ NSString const *BlockKey = @"BlockKey";
     self.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     [self.superview.layer insertSublayer:shadowLayer below:self.layer];
+}
+
+#pragma mark - 设置圆角
+- (void)zg_setRadius:(CGFloat)radius {
+    self.layer.cornerRadius = radius;
+    self.layer.masksToBounds = YES;
+}
+
+#pragma mark - 设置边框
+- (void)zg_setBorder:(UIColor *)borderColor
+         borderWidth:(CGFloat)borderWidth {
+    self.layer.borderColor = borderColor.CGColor;
+    self.layer.borderWidth = borderWidth;
+}
+
+#pragma mark - 设置任意圆角及边框(实线/虚线)
+- (void)zg_addCorners:(UIRectCorner)corners
+             radius:(CGFloat)radius
+         lineWidth:(CGFloat)lineWidth
+         lineColor:(UIColor *_Nullable )lineColor
+              dash:(NSArray<NSNumber *>*_Nullable )lineDashPattern {
+    
+    ///解决masonry布局获取不了正确的frame
+    [self.superview layoutIfNeeded];
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius,radius)];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+    CAShapeLayer *borderLayer = [CAShapeLayer layer];
+    borderLayer.lineWidth = lineWidth;
+    borderLayer.strokeColor = lineColor.CGColor;
+    borderLayer.fillColor = [UIColor clearColor].CGColor;
+    if (lineDashPattern) {
+        borderLayer.lineDashPattern = lineDashPattern;
+    }
+    borderLayer.path = maskPath.CGPath;
+    [self.layer insertSublayer:borderLayer atIndex:0];
+    self.layer.mask = maskLayer;
+}
+
+#pragma mark - 视图添加抖动
+- (void)zg_shake {
+    CAKeyframeAnimation *keyAn = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    [keyAn setDuration:0.5f];
+    NSArray *array = [[NSArray alloc] initWithObjects:
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x - 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x + 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x - 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x + 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x - 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x + 5, self.center.y)],
+                      [NSValue valueWithCGPoint:CGPointMake(self.center.x, self.center.y)],
+                      nil];
+    [keyAn setValues:array];
+ 
+    NSArray *times = [[NSArray alloc] initWithObjects:
+                      [NSNumber numberWithFloat:0.1f],
+                      [NSNumber numberWithFloat:0.2f],
+                      [NSNumber numberWithFloat:0.3f],
+                      [NSNumber numberWithFloat:0.4f],
+                      [NSNumber numberWithFloat:0.5f],
+                      [NSNumber numberWithFloat:0.6f],
+                      [NSNumber numberWithFloat:0.7f],
+                      [NSNumber numberWithFloat:0.8f],
+                      [NSNumber numberWithFloat:0.9f],
+                      [NSNumber numberWithFloat:1.0f],
+                      nil];
+    [keyAn setKeyTimes:times];
+    [self.layer addAnimation:keyAn forKey:@"TextAnim"];
 }
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ISGCommonViewController.h"
-#import <ISGTools.h>
+#import <ISGKit/ISGKit.h>
 
 @interface ISGCommonViewController ()
 
@@ -30,6 +30,19 @@
     NSString *string2 = @"ABC的风格";
     CGFloat height = [ISGTools textHeight:string2 font:[UIFont systemFontOfSize:13]];
     NSLog(@"height:%f",height);
+    
+    UIButton *button = [UIButton zg_customButton];
+    [self.view addSubview:button];
+    button.frame = CGRectMake(100, 200, 100, 100);
+    button.backgroundColor = UIColor.randomColor;
+    button.zg_ignoreEventInterval = 5;
+    [button addTarget:self action:@selector(didClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)didClick:(id)sender {
+    NSLog(@"点击按钮");
+    UIButton *button = (UIButton *)sender;
+    [button zg_shake];
 }
 
 - (void)didReceiveMemoryWarning
