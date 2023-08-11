@@ -6,3 +6,6 @@
 #import "NSBundle+ISGCategory.h"
 #import "UIButton+ISGCategory.h"
 #import "UIControl+ISGCategory.h"
+#import "UITextField+ISGCategory.h"
+#import "UINavigationController+ISGCategory.h"
+#import "UILabel+ISGCategory.h"

@@ -18,6 +18,9 @@
 #import "UIColor+ISGCategory.h"
 #import "UIControl+ISGCategory.h"
 #import "UIImage+ISGCategory.h"
+#import "UILabel+ISGCategory.h"
+#import "UINavigationController+ISGCategory.h"
+#import "UITextField+ISGCategory.h"
 #import "UIView+ISGCategory.h"
 
 FOUNDATION_EXPORT double ISGKitVersionNumber;
