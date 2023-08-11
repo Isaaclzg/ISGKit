@@ -530,6 +530,36 @@
 			};
 			name = Debug;
 		};
+		3E05D04A6C70FAF31AC46B12227B65FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3DA3F061484B537F2A24DEDD4CC2B1 /* ISGKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ISGKit/ISGKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ISGKit/ISGKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ISGKit/ISGKit.modulemap";
+				PRODUCT_MODULE_NAME = ISGKit;
+				PRODUCT_NAME = ISGKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		431BA2B8298F0EE71735B9E0114E1955 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -625,36 +655,6 @@
 			};
 			name = Release;
 		};
-		699B251C2684B15C93457D033AC91936 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98D5258767D9BFC7FF555C257CE40DFA /* ISGKit.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ISGKit/ISGKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ISGKit/ISGKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ISGKit/ISGKit.modulemap";
-				PRODUCT_MODULE_NAME = ISGKit;
-				PRODUCT_NAME = ISGKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		79759604D78320E712558F49DF19AA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -721,10 +721,11 @@
 			};
 			name = Debug;
 		};
-		90CE058405D772A1E0985CD8554A86AD /* Debug */ = {
+		EC5BA9CC03635B6C16965F8361B658BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E3DA3F061484B537F2A24DEDD4CC2B1 /* ISGKit.debug.xcconfig */;
+			baseConfigurationReference = 98D5258767D9BFC7FF555C257CE40DFA /* ISGKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -736,7 +737,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ISGKit/ISGKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ISGKit/ISGKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ISGKit/ISGKit.modulemap";
 				PRODUCT_MODULE_NAME = ISGKit;
@@ -745,10 +746,11 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		F59B6F61E748C9ACE79B59898838B8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -839,8 +841,8 @@
 		501320BE52DF17A67D5E480045946D3A /* Build configuration list for PBXNativeTarget "ISGKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90CE058405D772A1E0985CD8554A86AD /* Debug */,
-				699B251C2684B15C93457D033AC91936 /* Release */,
+				3E05D04A6C70FAF31AC46B12227B65FF /* Debug */,
+				EC5BA9CC03635B6C16965F8361B658BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

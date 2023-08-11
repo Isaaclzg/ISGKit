@@ -248,7 +248,7 @@
 				ORGANIZATIONNAME = Isaaclzg;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = R72L2YWQ2L;
+						DevelopmentTeam = XUTAJVDFUB;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -514,12 +514,12 @@
 			baseConfigurationReference = 476C5F647DD28F53314E6E02 /* Pods-ISGKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R72L2YWQ2L;
+				DEVELOPMENT_TEAM = XUTAJVDFUB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISGKit/ISGKit-Prefix.pch";
 				INFOPLIST_FILE = "ISGKit/ISGKit-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lywl.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hurryup.isaac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -530,12 +530,12 @@
 			baseConfigurationReference = 604613FF87350ECCBDB7B2A1 /* Pods-ISGKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R72L2YWQ2L;
+				DEVELOPMENT_TEAM = XUTAJVDFUB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISGKit/ISGKit-Prefix.pch";
 				INFOPLIST_FILE = "ISGKit/ISGKit-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lywl.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hurryup.isaac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

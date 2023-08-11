@@ -28,7 +28,7 @@ TODO: 开发自用
   s.source           = { :git => 'https://github.com/Isaaclzg/ISGKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://www.jianshu.com/u/7e1b920cdac1'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'ISGKit/Classes/**/*'
   
