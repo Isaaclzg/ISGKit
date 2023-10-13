@@ -7,6 +7,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, ZGGradientColorDirection) {
+    /*! @brief 水平渐变 */
+    ZGGradientColorDirectionLevel,
+    
+    /*! @brief 竖直渐变 */
+    ZGGradientColorDirectionVertical,
+    
+    /*! @brief 向上对角线渐变 */
+    ZGGradientColorDirectionDownDiagonalLine,
+    
+    /*! @brief 向下对角线渐变 */
+    ZGGradientColorDirectionUpwardDiagonalLine,
+};
 @interface UIColor (ISGCategory)
 
 /**
@@ -80,5 +93,15 @@
  */
 + (UIColor *)colorWithHexString:(NSString *)color
                           alpha:(CGFloat)alpha;
+
+/// 设置渐变色
+/// @param size 需要渐变的大小
+/// @param direction 渐变的方向
+/// @param startcolor 渐变的开始颜色
+/// @param endColor 渐变的结束颜色
++ (UIColor *)gradientColorWithSize:(CGSize)size 
+                         direction:(ZGGradientColorDirection)direction
+                        startColor:(UIColor *)startcolor
+                          endColor:(UIColor *)endColor;
 
 @end
