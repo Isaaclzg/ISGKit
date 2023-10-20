@@ -104,4 +104,12 @@ typedef NS_ENUM(NSInteger, ZGGradientColorDirection) {
                         startColor:(UIColor *)startcolor
                           endColor:(UIColor *)endColor;
 
+/// 设置渐变色
+/// @param size 需要渐变的大小
+/// @param direction 渐变的方向
+/// @param colorArray 渐变的颜色数组
++ (UIColor *)gradientColorWithSize:(CGSize)size
+                         direction:(ZGGradientColorDirection)direction
+                        colorArray:(NSArray *)colorArray;
+
 @end

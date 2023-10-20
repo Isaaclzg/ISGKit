@@ -187,4 +187,52 @@ CGFloat colorComponentFrom(NSString *string, NSUInteger start, NSUInteger length
     return [UIColor colorWithPatternImage:image];
 }
 
+#pragma mark - 设置渐变色
++ (UIColor *)gradientColorWithSize:(CGSize)size
+                         direction:(ZGGradientColorDirection)direction
+                        colorArray:(NSArray *)colorArray {
+    
+    if (CGSizeEqualToSize(size, CGSizeZero) || colorArray.count == 0) {
+        return nil;
+    }
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    
+    CGPoint startPoint = CGPointMake(0.0, 0.0);
+    if (direction == ZGGradientColorDirectionUpwardDiagonalLine) {
+        startPoint = CGPointMake(0.0, 1.0);
+    }
+    
+    CGPoint endPoint = CGPointMake(0.0, 0.0);
+    switch (direction) {
+        case ZGGradientColorDirectionVertical:
+            endPoint = CGPointMake(0.0, 1.0);
+            break;
+        case ZGGradientColorDirectionDownDiagonalLine:
+            endPoint = CGPointMake(1.0, 1.0);
+            break;
+        case ZGGradientColorDirectionUpwardDiagonalLine:
+            endPoint = CGPointMake(1.0, 0.0);
+            break;
+        default:
+            endPoint = CGPointMake(1.0, 0.0);
+            break;
+    }
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint = endPoint;
+    
+    NSMutableArray *tempArr = [NSMutableArray array];
+    for (UIColor *color in colorArray) {
+        [tempArr addObject:(__bridge id)color.CGColor];
+    }
+    gradientLayer.colors = tempArr.copy;
+    UIGraphicsBeginImageContext(size);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return [UIColor colorWithPatternImage:image];
+}
+
 @end
