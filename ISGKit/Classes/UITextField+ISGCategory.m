@@ -8,8 +8,15 @@
 #import "UITextField+ISGCategory.h"
 #import <objc/runtime.h>
 #import "ISGTools.h"
+#import "NSObject+ISGCategory.h"
 
 static NSString *ZGLimitTextLengthKey = @"ZGLimitTextLengthKey";
+
+@interface UITextField()
+
+@property (nonatomic, assign, class) BOOL zg_globalUsingSystemKeyboard;
+
+@end
 
 @implementation UITextField (ISGCategory)
 
@@ -93,4 +100,137 @@ static NSString *ZGLimitTextLengthKey = @"ZGLimitTextLengthKey";
     self.attributedPlaceholder = attributeStr;
 }
 
++ (void)load {
+    [self zg_hookInstanceMethodWithTargetCls:[self class]
+                               currentCls:[self class]
+                           targetSelector:NSSelectorFromString(@"dealloc")
+                          currentSelector:@selector(zg_textField_deallocSwizzle)];
+
+    [self zg_hookInstanceMethodWithTargetCls:[self class]
+                               currentCls:[self class]
+                           targetSelector:@selector(initWithFrame:)
+                          currentSelector:@selector(zg_textField_initWithFrame:)];
+}
+
+- (void)zg_textField_deallocSwizzle {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self zg_textField_deallocSwizzle];
+}
+
+- (instancetype)zg_textField_initWithFrame:(CGRect)frame {
+    
+    self.zg_textMaxLength = 0;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldTextDidChange)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidBeginEdit:)
+                                                 name:UITextFieldTextDidBeginEditingNotification
+                                               object:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidEndEdit:)
+                                                 name:UITextFieldTextDidEndEditingNotification
+                                               object:self];
+    
+    return [self zg_textField_initWithFrame:frame];
+}
+
+- (void)setZg_textMaxLength:(NSInteger)zg_textMaxLength {
+    
+    NSNumber *number = [NSNumber numberWithInteger:zg_textMaxLength];
+    objc_setAssociatedObject(self, @selector(zg_textMaxLength), number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.zg_textMaxLength > 0) {
+        [self performDelegate];
+    }
+}
+
+- (NSInteger)zg_textMaxLength {
+    
+    return [objc_getAssociatedObject(self, @selector(zg_textMaxLength)) integerValue];
+}
+
+- (void)setZg_delegate:(id<ZGTextFieldTextMaxLengthDelegate>)zg_delegate {
+    
+    objc_setAssociatedObject(self, @selector(zg_delegate), zg_delegate, OBJC_ASSOCIATION_ASSIGN);
+    if (self.zg_textMaxLength > 0) {
+        [self performDelegate];
+    }
+}
+
+- (id<ZGTextFieldTextMaxLengthDelegate>)zg_delegate {
+    
+    return objc_getAssociatedObject(self, @selector(zg_delegate));
+}
+
+- (void)setZg_usingSystemKeyboard:(BOOL)zg_usingSystemKeyboard {
+    
+    objc_setAssociatedObject(self, @selector(zg_usingSystemKeyboard), @(zg_usingSystemKeyboard), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)zg_usingSystemKeyboard {
+    
+    NSNumber *zg_usingSystemKeyboard = objc_getAssociatedObject(self, @selector(zg_usingSystemKeyboard));
+    return [zg_usingSystemKeyboard boolValue];
+}
+
++ (void)setZg_globalUsingSystemKeyboard:(BOOL)zg_globalUsingSystemKeyboard {
+    
+    objc_setAssociatedObject(self, @selector(zg_globalUsingSystemKeyboard), @(zg_globalUsingSystemKeyboard), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
++ (BOOL)zg_globalUsingSystemKeyboard {
+    
+    NSNumber *zg_globalUsingSystemKeyboard = objc_getAssociatedObject(self, @selector(zg_globalUsingSystemKeyboard));
+    return [zg_globalUsingSystemKeyboard boolValue];
+}
+
+- (void)textFieldTextDidChange {
+    
+    if (self.zg_textMaxLength <= 0) return;
+    
+    NSString *toBeString = self.text;
+    
+    UITextRange *selectedRange = [self markedTextRange];
+    if (selectedRange && !selectedRange.isEmpty) {
+        return;
+    }
+    if (toBeString.length > self.zg_textMaxLength) {
+        self.text = [toBeString substringToIndex:self.zg_textMaxLength];
+    }
+    [self performDelegate];
+}
+
+- (void)textFieldDidBeginEdit:(NSNotification *)notification {
+    
+    UITextField.zg_globalUsingSystemKeyboard = self.zg_usingSystemKeyboard;
+}
+
+- (void)textFieldDidEndEdit:(NSNotification *)notification {
+    
+    UITextField.zg_globalUsingSystemKeyboard = NO;
+}
+
+- (void)performDelegate {
+    
+    if ([self.zg_delegate respondsToSelector:@selector(textField:textDidChange:textLength:textMaxLength:)]) {
+        [self.zg_delegate textField:self
+                       textDidChange:self.text
+                          textLength:self.text.length
+                      textMaxLength:self.zg_textMaxLength];
+    }
+}
+
++ (BOOL)zg_shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier {
+    
+    if ([extensionPointIdentifier isEqualToString:@"com.apple.keyboard-service"]) {
+        if (self.zg_globalUsingSystemKeyboard) {
+            return NO;
+        }
+    }
+    return YES;
+}
 @end

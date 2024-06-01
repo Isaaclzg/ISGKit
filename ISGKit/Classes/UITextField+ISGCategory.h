@@ -7,7 +7,35 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZGTextFieldTextMaxLengthDelegate <NSObject>
+
+@optional
+
+/// UITextField 文本发生改变代理方法
+/// @param textField UITextField输入框
+/// @param text 当前文本字符串
+/// @param textLength 当前文本字符串长度
+/// @param textMaxLength 当前输入框限制最大字符长度
+- (void)textField:(UITextField *)textField
+    textDidChange:(NSString *)text
+       textLength:(NSInteger)textLength
+    textMaxLength:(NSInteger)textMaxLength;
+
+@end
+
 @interface UITextField (ISGCategory)
+
+/// 代理
+@property (nonatomic, weak) id<ZGTextFieldTextMaxLengthDelegate> zg_delegate;
+
+/// 文本最大字数限制
+@property (nonatomic, assign) NSInteger zg_textMaxLength;
+
+/// 使用系统键盘
+@property (nonatomic, assign) BOOL zg_usingSystemKeyboard;
+
+/// 键盘控制在 AppDelegate 中的 application:shouldAllowExtensionPointIdentifier: 调用
++ (BOOL)zg_shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier;
 
 /// 限制输入字数
 /// - Parameter length: 限制输入字数
